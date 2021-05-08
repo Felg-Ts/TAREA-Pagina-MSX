@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>principal</title>
+<title>{% block title %}{% endblock %}</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" type="text/css" media="all" href="{{url_for("static", filename='css/framework.css')}}">
+<link rel="stylesheet" type="text/css" media="all" href="{{url_for("static", filename='css/layout.css')}}">
+
 </head>
 <body id="top">
 
-<div class="bgded overlay" style="background-image:url('images/msx.png');">
+<div class="bgded overlay" style="background-image:url('{{url_for("static", filename='css/msx.png')}}">
   <a href="https://www.google.com" id="enlace"></a>
   <div class="wrapper row1">
   </div>

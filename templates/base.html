@@ -11,20 +11,15 @@
 <body id="top">
 
 <div class="bgded overlay" style="background-image:url('{{url_for("static", filename='css/msx.png')}}">
-  <a href="https://www.google.com" id="enlace"></a>
+  {% block enlace %}{% endblock %}
   <div class="wrapper row1">
   </div>
   <div id="pageintro" class="hoc clear"> 
     <article>
       <h3 class="heading">TAREA: Página MSX</h3>
-      <p>Página principal.</p>
+      {% block title2 %}{% endblock %}
       <footer>
-        <form class="group" method="post" action="#">
-          <fieldset>
-            <input type="text" value="" placeholder="Nombre del Juego">
-            <button class="fas fa-sign-in-alt" type="submit" title="Submit"><em>Submit</em></button>
-          </fieldset>
-        </form>
+        {% block form %}{% endblock %}
       </footer>
     </article>
   </div>
@@ -36,17 +31,7 @@
         <h6 class="heading"></h6>
       </div>
       <div class="one_third">
-        <div class="datagrid"><table>
-          <thead><tr><th>Nombre</th><th>Desarrollador</th><th>Detalle</th></tr></thead>
-          <tbody><tr><td>data</td><td>data</td><td>data</td></tr>
-          <tr class="alt"><td>data</td><td>data</td><td>data</td></tr>
-          <tr><td>data</td><td>data</td><td>data</td></tr>
-          <tr class="alt"><td>data</td><td>data</td><td>data</td></tr>
-          <tr><td>data</td><td>data</td><td>data</td></tr>
-          <tr class="alt"><td>data</td><td>data</td><td>data</td></tr>
-          <tr><td>data</td><td>data</td><td>data</td></tr>
-          </tbody>
-          </table></div>
+        {% block table %}{% endblock %}
       </div>
       <div class="one_third">
         <h6 class="heading"></h6>

@@ -5,13 +5,10 @@
 <div class="datagrid">
     <table>
         <thead><tr><th>Nombre</th><th>Desarrollador</th><th>Detalle</th></tr></thead>
-        <tbody><tr><td>data</td><td>data</td><td>data</td></tr>
-        <tr class="alt"><td>data</td><td>data</td><td>data</td></tr>
-        <tr><td>data</td><td>data</td><td>data</td></tr>
-        <tr class="alt"><td>data</td><td>data</td><td>data</td></tr>
-        <tr><td>data</td><td>data</td><td>data</td></tr>
-        <tr class="alt"><td>data</td><td>data</td><td>data</td></tr>
-        <tr><td>data</td><td>data</td><td>data</td></tr>
+        <tbody>
+            {% for a in jsondecoded %}
+            <tr class="alt"><td >{{ a.nombre }}</td><td>{{ a.desarrollador }}</td><td>{{ a.id }}</td></tr>
+            {% endfor %}
         </tbody>
     </table>
 </div>

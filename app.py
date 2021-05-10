@@ -1,4 +1,7 @@
 from flask import Flask, request,url_for,render_template
+from jinja2 import Template
+import json
+
 app = Flask(__name__)	
 
 @app.route('/',methods=["GET"])
@@ -12,12 +15,32 @@ def juegos():
 
 @app.route('/listajuegos',methods=["POST"])
 def listajuegos():
-	cadena=request.form.get("tjuego")
-	return render_template("listajuegos.html",titulo="listajuegos",cadena=cadena)
+    
+    f = open("MSX.json", "r")
+    content = f.read()
+    jsondecoded = json.loads(content)
+
+    nombrej=request.form.get("tjuego")
+
+    for i in jsondecoded:
+        entityName = i["nombre"]
+        if entityName.startswith(nombrej) is True:
+            return render_template("listajuegos.html",titulo="listajuegos", jsondecoded=jsondecoded, i=i)
 
 @app.route('/juego/<int:cadena1>/',methods=["GET","POST"])
-def juego(cadena1):
-    return render_template("juego.html",titulo="juego", cadena1="cadena1")
+def juego(nombrej):
+
+    #f = open("MSX.json", "r")
+    #content = f.read()
+    #jsondecoded = json.loads(content)
+
+    #for entity in jsondecoded:
+        #entityName = entity["nombre"]
+        #if entityName.startswith(nombrej) is True:
+            #print(entityName)
+            #print(entity["desarrollador"])
+
+            return render_template("juego.html",titulo="juego",)
 
 #return render_template("potencia.html", base=bp, exponente=ep, solucion=bp**ep)
 

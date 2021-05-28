@@ -1,4 +1,15 @@
 {% extends "base.html" %}
 {% block title %}{{titulo}}{% endblock %}
-{% block title2 %}{{cadena1}}{% endblock %}
-
+{% block table %}
+<div>
+    {% for a in l1 %}
+    <p>id: {{a.id}}</p>
+    <p>nombre: {{a.nombre}}</p>
+    <p>sistema: {{a.sistema}}</p>
+    <p>distribuidor: {{a.distribuidor}}</p>
+    <p>desarrollador: {{a.desarrollador}}</p>
+    <p>categoria: {{a.categoria}}</p>
+    <p>año: {{a.}}</p>
+    {% endfor %}
+</div>
+{% endblock %}

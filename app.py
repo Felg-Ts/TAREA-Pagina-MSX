@@ -31,22 +31,21 @@ def listajuegos():
 
     return render_template("listajuegos.html",titulo="listajuegos", l1=l1, i=i)
 
-@app.route('/juego/<int:cadena1>/',methods=["GET","POST"])
-def juego(nombrej):
+@app.route('/juego/<int:id>/',methods=["GET","POST"])
+def juego(id):
 
-    #f = open("MSX.json", "r")
-    #content = f.read()
-    #jsondecoded = json.loads(content)
+    l1 = []
 
-    #for entity in jsondecoded:
-        #entityName = entity["nombre"]
-        #if entityName.startswith(nombrej) is True:
-            #print(entityName)
-            #print(entity["desarrollador"])
+    f = open("MSX.json", "r")
+    content = f.read()
+    jsondecoded = json.loads(content)
 
-            return render_template("juego.html",titulo="juego",)
+    for i in jsondecoded:
+        entityid = i["id"]
+        if entityid == id:
+            l1.append(i)
 
-#return render_template("potencia.html", base=bp, exponente=ep, solucion=bp**ep)
+    return render_template("juego.html",titulo="juego", l1=l1, i=i)
 
 if __name__ == '__main__':
 	app.run('0.0.0.0',5000, debug=True)

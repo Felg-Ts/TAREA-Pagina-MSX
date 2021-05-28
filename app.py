@@ -29,7 +29,7 @@ def listajuegos():
         if entityName.startswith(nombrej):
             l1.append(i)
 
-    return render_template("listajuegos.html",titulo="listajuegos", l1=l1, i=i)
+    return render_template("listajuegos.html",titulo="listajuegos", l1=l1)
 
 @app.route('/juego/<int:id>/',methods=["GET","POST"])
 def juego(id):
@@ -45,7 +45,7 @@ def juego(id):
         if entityid == id:
             l1.append(i)
 
-    return render_template("juego.html",titulo="juego", l1=l1, i=i)
+    return render_template("juego.html",titulo="juego", l1=l1)
 
 if __name__ == '__main__':
 	app.run('0.0.0.0',5000, debug=True)

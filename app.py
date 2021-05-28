@@ -16,6 +16,8 @@ def juegos():
 @app.route('/listajuegos',methods=["POST"])
 def listajuegos():
     
+    l1 = []
+
     f = open("MSX.json", "r")
     content = f.read()
     jsondecoded = json.loads(content)
@@ -24,8 +26,10 @@ def listajuegos():
 
     for i in jsondecoded:
         entityName = i["nombre"]
-        if entityName.startswith(nombrej) is True:
-            return render_template("listajuegos.html",titulo="listajuegos", jsondecoded=jsondecoded, i=i)
+        if entityName.startswith(nombrej):
+            l1.append(i)
+
+    return render_template("listajuegos.html",titulo="listajuegos", l1=l1, i=i)
 
 @app.route('/juego/<int:cadena1>/',methods=["GET","POST"])
 def juego(nombrej):

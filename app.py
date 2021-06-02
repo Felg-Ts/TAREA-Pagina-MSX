@@ -1,3 +1,4 @@
+from os import abort
 from flask import Flask, request,url_for,render_template
 from jinja2 import Template
 import json
@@ -44,6 +45,8 @@ def juego(id):
         entityid = i["id"]
         if entityid == id:
             l1.append(i)
+    if len(l1) == 0:
+        return render_template("error404.html",titulo="error404")
 
     return render_template("juego.html",titulo="juego", l1=l1)
 

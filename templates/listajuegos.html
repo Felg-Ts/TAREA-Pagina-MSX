@@ -7,7 +7,7 @@
         <thead><tr><th>Nombre</th><th>Desarrollador</th><th>Detalle</th></tr></thead>
         <tbody>
             {% for a in l1 %}
-            <tr class="alt"><td >{{ a.nombre }}</td><td>{{ a.desarrollador }}</td><td>{{ a.id }}</td></tr>
+            <tr class="alt"><td >{{ a.nombre }}</td><td>{{ a.desarrollador }}</td><td><a href="/juego/{{a.id}}">{{a.id}}</a></td></tr>
             {% endfor %}
         </tbody>
     </table>

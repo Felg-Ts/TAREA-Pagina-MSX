@@ -29,6 +29,10 @@ def listajuegos():
         entityName = i["nombre"]
         if entityName.startswith(nombrej):
             l1.append(i)
+    if len(l1) == 0:
+        error = "No se encontró ninguna coincidencia con los caracteres introducidos"
+        return render_template("error404.html",titulo="error404", error=error)
+
 
     return render_template("listajuegos.html",titulo="listajuegos", l1=l1)
 
@@ -46,7 +50,8 @@ def juego(id):
         if entityid == id:
             l1.append(i)
     if len(l1) == 0:
-        return render_template("error404.html",titulo="error404")
+        error = "No se encontró ninguna coincidencia con el id introducido"
+        return render_template("error404.html",titulo="error404", error=error)
 
     return render_template("juego.html",titulo="juego", l1=l1)
 

@@ -1,4 +1,4 @@
-from os import abort
+import os
 from flask import Flask, request,url_for,render_template
 from jinja2 import Template
 import json
@@ -56,4 +56,5 @@ def juego(id):
     return render_template("juego.html",titulo="juego", l1=l1)
 
 if __name__ == '__main__':
-	app.run('0.0.0.0',5000, debug=True)
+    port=os.environ["PORT"]
+    app.run('0.0.0.0',int(port), debug=True)

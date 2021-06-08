@@ -55,6 +55,5 @@ def juego(id):
 
     return render_template("juego.html",titulo="juego", l1=l1)
 
-if __name__ == '__main__':
-    port=os.environ["PORT"]
-    app.run('0.0.0.0',int(port), debug=True)
+port=os.environ["PORT"]
+app.run('0.0.0.0',int(port), debug=True)

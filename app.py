@@ -5,9 +5,9 @@ import json
 
 app = Flask(__name__)	
 
-@app.route('/',methods=["GET","POST"])
-def inicio():
-    return render_template("inicio.html",titulo="principal")
+#@app.route('/',methods=["GET"])
+#def inicio():
+#    return render_template("inicio.html",titulo="principal")
 
 @app.route('/juegos',methods=["GET"])
 def juegos():

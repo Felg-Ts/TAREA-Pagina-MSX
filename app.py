@@ -27,7 +27,7 @@ def listajuegos():
 
     for i in jsondecoded:
         entityName = i["nombre"]
-        if entityName.startswith(nombrej):
+        if entityName.startswith(str(nombrej)):
             l1.append(i)
     if len(l1) == 0:
         error = "No se encontró ninguna coincidencia con los caracteres introducidos"

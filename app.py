@@ -5,7 +5,7 @@ import json
 
 app = Flask(__name__)	
 
-@app.route('/',methods=["GET"])
+@app.route('/',methods=["GET","POST"])
 def inicio():
     return render_template("inicio.html",titulo="principal")
 

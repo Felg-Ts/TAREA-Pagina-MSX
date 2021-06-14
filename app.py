@@ -21,7 +21,7 @@ def listajuegos():
 
     f = open("MSX.json", "r")
     content = f.read()
-    jsondecoded = json.loads(content, encoding = "ISO-8859-1")
+    jsondecoded = json.loads(content)
 
     nombrej=request.form.get("tjuego")
 
@@ -43,7 +43,7 @@ def juego(id):
 
     f = open("MSX.json", "r")
     content = f.read()
-    jsondecoded = json.loads(content, encoding = "ISO-8859-1")
+    jsondecoded = json.loads(content)
 
     for i in jsondecoded:
         entityid = i["id"]
